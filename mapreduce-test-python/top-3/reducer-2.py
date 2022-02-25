@@ -4,7 +4,7 @@ import sys
 
 
 for line in sys.stdin: 
-  line = line.strip().split('\t')
-  hour, ip, count = line
-  hour,ip = line.split('\t')    
+  line = line.strip()
+  hour_ip, count = line   
+  hour, ip, count = line.split(' ')
   print '%s\t%s' % ('['+hour+']' +ip, count)
