@@ -21,4 +21,4 @@ for line in sys.stdin:
  for hour, ip_count in dict_hour_ip_count.items():
     top3 = sorted(list(ip_count), key = lambda x:x[1], reverse=True)[0:3]
     for ip, count in top3:
-        print ('%s\t%s' % ('['+hour+']' +ip, count))
+        print '%s\t%s' % ('['+hour+']' +ip, count)
