@@ -1,5 +1,3 @@
-
-   
 #!/usr/bin/python
 from operator import itemgetter
 import sys
@@ -29,9 +27,9 @@ for hour_ip, count in dict_ip_count.items():
       dict_hour_ip[hour].append((ip, count))
 
 for hour, ip_count in dict_hour_ip.items():
-    top_3_ip = sorted(list(ip_count), key = lambda x:x[1], reverse=True)[0:3]
-    print(hour,"top 3 ip", top_3_ip)
-    for ip, count in top_3_ip:
+    top_3= sorted(list(ip_count), key = lambda x:x[1], reverse=True)[0:3]
+    print '%s\t%s' % (hour, top_3)
+    for ip, count in top_3:
         print ('%s\t%s' % ('['+hour+']' +ip, count))
 
 sorted_dict_ip_count = sorted(dict_ip_count.items(), key=itemgetter(0))
