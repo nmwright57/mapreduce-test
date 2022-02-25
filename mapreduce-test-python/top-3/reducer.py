@@ -20,13 +20,13 @@ for line in sys.stdin:
 dict_hour_ip = {}
 
 for hour_ip, count in dict_ip_count.items():
-  hour = hour_ip[1:6]
-        ip = hour_ip[7:]
-        count = int(count)
-        if hour not in dict_hour_ip.keys():
-            dict_hour_ip[hour] = [(ip,count)]
-        else:
-            dict_hour_ip[hour].append((ip, count))
+   hour = hour_ip[1:6]
+   ip = hour_ip[7:]
+   count = int(count)
+   if hour not in dict_hour_ip.keys():
+      dict_hour_ip[hour] = [(ip,count)]
+   else:
+      dict_hour_ip[hour].append((ip, count))
 
 for hour, ip_count in dict_hour_ip.items():
     top_3_ip = sorted(list(ip_count), key = lambda x:x[1], reverse=True)[0:3]
